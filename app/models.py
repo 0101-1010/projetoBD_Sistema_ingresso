@@ -10,5 +10,5 @@ class Organizadora(models.Model):
     nome_fantasia = models.CharField(max_length=45)
 
 class Telefone(models.Model):
-    organizadora_cnpj = models.IntegerField(Organizadora.cnpj, primary_key=True)
+    organizadora_cnpj = models.IntegerField(Organizadora.cnpj)
     telefone = models.CharField(max_length=45)
