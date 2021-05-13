@@ -20,14 +20,12 @@ def form(request):
 
 def create(request):
     form = OrganizadoraEvento(request.POST or None)
+    telefone = Telefone_organizadora(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('home')
-    telefone = Telefone_organizadora(request.POST or None)
-    if telefone.is_valid():
         telefone.save()
         return redirect('home')
-
+    
 def view(request, pk):
     data = {}
     data['db'] = Organizadora.objects.get(pk=pk)
@@ -46,11 +44,10 @@ def update(request, pk):
     data = {}
     data['db'] = Organizadora.objects.get(pk=pk)
     form = OrganizadoraEvento(request.POST or None, instance=data['db'])
+    data['tel'] = Telefone.objects.get(pk=pk)
+    telefone = Telefone_organizadora(request.POST or None, instance=data['tel'])
     if form.is_valid():
         form.save()
-    data['tel'] = Telefone.objects.get(pk=pk)
-    telefone = Telefone_organizadora(request.POST or None, instance=data['db'])
-    if telefone.is_valid():
         telefone.save()
     return redirect('home')
 
