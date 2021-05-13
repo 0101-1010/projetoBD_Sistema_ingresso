@@ -26,25 +26,25 @@ def create(request):
         telefone.save()
         return redirect('home')
     
-def view(request, pk):
+def view(request, pk, fk):
     data = {}
     data['db'] = Organizadora.objects.get(pk=pk)
-    data['tel'] = Telefone.objects.get(pk=pk)
+    data['tel'] = Telefone.objects.get(fk=fk)
     return render(request, "view.html", data)
 
-def edit(request, pk):
+def edit(request, pk, fk):
     data = {}
     data['db'] = Organizadora.objects.get(pk=pk)
     data['form'] = OrganizadoraEvento(instance=data['db'])
-    data['tel'] = Telefone.objects.get(pk=pk)
+    data['tel'] = Telefone.objects.get(fk=fk)
     data['telefone'] = Telefone_organizadora(instance=data['tel'])
     return render(request, 'form.html', data)
 
-def update(request, pk):
+def update(request, pk, fk):
     data = {}
     data['db'] = Organizadora.objects.get(pk=pk)
     form = OrganizadoraEvento(request.POST or None, instance=data['db'])
-    data['tel'] = Telefone.objects.get(pk=pk)
+    data['tel'] = Telefone.objects.get(fk=fk)
     telefone = Telefone_organizadora(request.POST or None, instance=data['tel'])
     if form.is_valid():
         form.save()
