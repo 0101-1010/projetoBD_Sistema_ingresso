@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms.models import InlineForeignKeyField
 
 
 # Create your models here.
@@ -9,5 +10,5 @@ class Organizadora(models.Model):
     nome_fantasia = models.CharField(max_length=45)
 
 class Telefone(models.Model):
-    organizadora_cnpj = models.IntegerField(Organizadora.cnpj)
+    organizadora_cnpj = models.IntegerField(Organizadora.cnpj, primary_key=True)
     telefone = models.CharField(max_length=45)
