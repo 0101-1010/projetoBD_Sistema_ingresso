@@ -22,14 +22,14 @@
     <div class="col-8 m-auto pt-4 pb-2 text-center">
         <table class="table">
             <thead class="thead-light">
-                <tr>
+              <tr>
                 <th scope="col">CNPJ</th>
                 <th scope="col">Nome real</th>
                 <th scope="col">Nome fantasia</th>
                 <th scope="col">ações</th>
               </tr>
             </thead>
-            <tbody>
+          <tbody>
             Organizadora
             {% for dbs in db %}
               <tr>
@@ -43,8 +43,8 @@
                 </td>
               </tr>
             {% endfor %}
-            </tbody>
-          </table>
+          </tbody>
+        </table>
     </div>
     {% load static %}
     <script src="{% static 'javascript.js' %}"></script>
