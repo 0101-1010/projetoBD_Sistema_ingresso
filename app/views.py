@@ -28,13 +28,13 @@ def view(request, pk):
     data['db'] = Organizadora.objects.get(pk=pk)
     return render(request, "view.html", data)
 
-def edit(request, pk, fk):
+def edit(request, pk):
     data = {}
     data['db'] = Organizadora.objects.get(pk=pk)
     data['form'] = OrganizadoraEvento(instance=data['db'])
     return render(request, 'form.html', data)
 
-def update(request, pk, fk):
+def update(request, pk):
     data = {}
     data['db'] = Organizadora.objects.get(pk=pk)
     form = OrganizadoraEvento(request.POST or None, instance=data['db'])
