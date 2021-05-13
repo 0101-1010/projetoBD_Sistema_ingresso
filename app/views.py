@@ -57,6 +57,4 @@ def update(request, pk):
 def delete(request, pk):
     db = Organizadora.objects.get(pk=pk)
     db.delete()
-    tel = Telefone.objects.get(pk=pk)
-    tel.delete()
     return redirect('home')
