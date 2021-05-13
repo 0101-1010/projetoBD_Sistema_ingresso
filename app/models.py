@@ -7,6 +7,3 @@ class Organizadora(models.Model):
     nome_real = models.CharField(max_length=45)
     nome_fantasia = models.CharField(max_length=45)
 
-class Telefone(models.Model):
-    organizadora_cnpj = models.IntegerField(foreign_key= True) 
-    telefone = models.CharField(max_length=45)
