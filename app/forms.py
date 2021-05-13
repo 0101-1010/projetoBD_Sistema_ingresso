@@ -1,8 +1,13 @@
 from django.forms import ModelForm
-from app.models import Person
+from app.models import Organizadora, Telefone
 
 # Create the form class.
-class PersonForm(ModelForm):
+class OrganizadoraEvento(ModelForm):
      class Meta:
-         model = Person
-         fields = ['first_name', 'last_name']
+         model = Organizadora
+         fields = ['cnpj','nome_real', 'nome_fantasia']
+
+class Telefone_organizadora(ModelForm):
+     class Meta:
+         model = Telefone
+         fields = ['organizadora_cnpj','telefone']

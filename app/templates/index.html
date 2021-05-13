@@ -23,23 +23,23 @@
         <table class="table">
             <thead class="thead-light">
                 <tr>
-                <th scope="col">ID</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
+                <th scope="col">CNPJ</th>
+                <th scope="col">Nome real</th>
+                <th scope="col">Nome fantasia</th>
                 <th scope="col">ações</th>
               </tr>
             </thead>
             <tbody>
-            Pessoa
+            Organizadora de evento
             {% for dbs in db %}
               <tr>
-                <th>{{dbs.id}}</th>
-                <td>{{dbs.first_name}}</td>
-                <td>{{dbs.last_name}}</td>
+                <th>{{dbs.cnpj}}</th>
+                <td>{{dbs.nome_real}}</td>
+                <td>{{dbs.nome_fantasia}}</td>
                 <td>
-                  <a href="/view/{{dbs.id}}" class="btn btn-dark">Visualizar</a>
-                  <a href="/edit/{{dbs.id}}" class="btn btn-primary">Editar</a>
-                  <a href="/delete/{{dbs.id}}" class="btn btn-danger btnDel">Deletar</a>
+                  <a href="/view/{{dbs.cnpj}}" class="btn btn-dark">Visualizar</a>
+                  <a href="/edit/{{dbs.cnpj}}" class="btn btn-primary">Editar</a>
+                  <a href="/delete/{{dbs.cnpj}}" class="btn btn-danger btnDel">Deletar</a>
                 </td>
               </tr>
             {% endfor %}
