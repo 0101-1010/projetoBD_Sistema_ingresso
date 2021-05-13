@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from app.models import Organizadora, Telefone
+from app.models import Organizadora
 
 # Create the form class.
 class OrganizadoraEvento(ModelForm):
