@@ -38,7 +38,6 @@ def update(request, pk):
     data = {}
     data['db'] = Organizadora.objects.get(pk=pk)
     form = OrganizadoraEvento(request.POST or None, instance=data['db'])
-
     if form.is_valid():
         form.save()
     return redirect('home')
